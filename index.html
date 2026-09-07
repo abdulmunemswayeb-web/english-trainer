@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="تطبيق تعلّم اللغة الإنجليزية بنظام المراجعة المتباعدة: مفردات A1–B2 وأدلة محادثة عملية.">
+  <meta name="theme-color" content="#0e1420">
+  <title>مدرّب الإنجليزية — English Trainer</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <div class="brand">
+      <span class="logo">📘</span>
+      <span>مدرّب الإنجليزية<small>مراجعة متباعدة · A1 إلى B2</small></span>
+    </div>
+    <span class="spacer"></span>
+    <button class="icon-btn" id="themeBtn" title="تبديل المظهر" aria-label="تبديل المظهر">🌙</button>
+    <button class="icon-btn" id="settingsBtn" title="الإعدادات" aria-label="الإعدادات">⚙️</button>
+  </div>
+</header>
+
+<main class="wrap" id="view"></main>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <button class="tab" data-route="home"><i>🏠</i>الرئيسية</button>
+    <button class="tab" data-route="review"><i>🎯</i>المراجعة<span class="badge hidden" id="dueBadge">0</span></button>
+    <button class="tab" data-route="quiz"><i>✍️</i>اختبار</button>
+    <button class="tab" data-route="phrases"><i>💬</i>محادثة</button>
+    <button class="tab" data-route="browse"><i>📚</i>المفردات</button>
+  </div>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/data/vocabulary.js"></script>
+<script src="assets/js/data/phrases.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
