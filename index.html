@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="مدرّب إنجليزية للتحدث الفعلي: معارض تجارية، تفاوض مع الموردين، سفر وتعارف — بنظام Leitner.">
+<meta name="theme-color" content="#0e1420">
+<title>مدرّب الإنجليزية — للتحدث الفعلي</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗣️</text></svg>">
+<style>
+:root{
+  --bg:#0e1420; --bg-soft:#151d2c; --card:#1a2334; --card-hi:#212c41; --line:#2a3752;
+  --txt:#e8eefc; --dim:#93a2be; --faint:#677693;
+  --accent:#4f9cf9; --accent-soft:rgba(79,156,249,.14);
+  --green:#22c55e; --amber:#f59e0b; --red:#ef4444; --violet:#a78bfa;
+  --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+[data-theme="light"]{
+  --bg:#f5f7fb; --bg-soft:#fff; --card:#fff; --card-hi:#eef2fa; --line:#dde4f0;
+  --txt:#16202e; --dim:#5a6a83; --faint:#8b98ad;
+  --accent:#2563eb; --accent-soft:rgba(37,99,235,.10); --shadow:0 8px 24px rgba(20,35,70,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{height:100%;scroll-padding-bottom:110px}
+body{
+  min-height:100%; background:var(--bg); color:var(--txt); line-height:1.75;
+  font-family:"Segoe UI","Noto Sans Arabic",Tahoma,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased; padding-bottom:104px;
+}
+.en{font-family:"Segoe UI",Inter,system-ui,sans-serif;direction:ltr;unicode-bidi:isolate}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;gap:12px;padding:11px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.brand .logo{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--accent),var(--violet));font-size:1.05rem}
+.brand small{display:block;font-size:.72rem;color:var(--dim);font-weight:400}
+.spacer{flex:1}
+.icon-btn{width:38px;height:38px;border-radius:11px;border:1px solid var(--line);background:var(--card);
+  color:var(--txt);cursor:pointer;font-size:1rem;display:grid;place-items:center;transition:.15s}
+.icon-btn:hover{background:var(--card-hi);border-color:var(--accent)}
+
+nav.tabs{position:fixed;bottom:0;inset-inline:0;z-index:30;padding:6px 16px calc(6px + env(safe-area-inset-bottom));
+  background:color-mix(in srgb,var(--bg-soft) 94%,transparent);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+.tabs-in{max-width:820px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.tab{border:0;background:none;color:var(--dim);cursor:pointer;padding:8px 4px;border-radius:12px;
+  display:grid;gap:2px;justify-items:center;font-size:.72rem;font-family:inherit;transition:.15s;position:relative}
+.tab i{font-style:normal;font-size:1.25rem;line-height:1}
+.tab.active{color:var(--accent);background:var(--accent-soft)}
+.tab .badge{position:absolute;top:2px;inset-inline-end:6px;min-width:18px;height:18px;border-radius:9px;
+  background:var(--red);color:#fff;font-size:.65rem;display:grid;place-items:center;padding:0 5px;font-weight:700}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.section{margin:20px 0}
+.section>h2{font-size:1.05rem;margin-bottom:12px}
+.muted{color:var(--dim)} .small{font-size:.86rem}
+.grid{display:grid;gap:12px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:600px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+.stat .num{font-size:1.55rem;font-weight:700;line-height:1.2}
+.stat .lbl{font-size:.78rem;color:var(--dim)}
+
+.btn{border:1px solid var(--line);background:var(--card);color:var(--txt);padding:11px 18px;border-radius:12px;
+  cursor:pointer;font-family:inherit;font-size:.95rem;font-weight:600;transition:.15s;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn:hover{background:var(--card-hi)}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-primary:hover{filter:brightness(1.1);background:var(--accent)}
+.btn-block{width:100%} .btn-lg{padding:15px 20px;font-size:1rem}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+
+.progress-bar{height:6px;background:var(--card-hi);border-radius:999px;overflow:hidden}
+.progress-bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--violet));transition:width .3s}
+.bar{height:10px;border-radius:999px;background:var(--card-hi);overflow:hidden;display:flex}
+.bar>i{display:block;height:100%}
+
+/* ------------------------------- السؤال ------------------------------- */
+.situation{background:var(--accent-soft);border:1px solid var(--line);border-inline-start:3px solid var(--accent);
+  border-radius:12px;padding:11px 14px;font-size:.92rem;color:var(--dim);margin-bottom:14px}
+.q-text{font-size:1.45rem;font-weight:600;line-height:1.7;text-align:center;margin:6px 0 4px}
+.q-ipa{text-align:center;color:var(--faint);font-size:.95rem;margin-bottom:4px}
+.q-ask{text-align:center;color:var(--dim);font-size:.88rem}
+.opt{width:100%;text-align:start;padding:14px 16px;border-radius:13px;border:1px solid var(--line);
+  background:var(--card);color:var(--txt);cursor:pointer;font-family:inherit;font-size:1.02rem;
+  margin-bottom:9px;transition:.15s;display:flex;align-items:center;gap:10px}
+.opt:hover:not(:disabled){border-color:var(--accent);background:var(--card-hi)}
+.opt .k{width:26px;height:26px;border-radius:8px;background:var(--card-hi);display:grid;place-items:center;
+  font-size:.78rem;color:var(--dim);flex:none}
+.opt.correct{border-color:var(--green);background:rgba(34,197,94,.12);color:var(--green);font-weight:600}
+.opt.wrong{border-color:var(--red);background:rgba(239,68,68,.12);color:var(--red)}
+.opt:disabled{cursor:default}
+
+.answer-in{width:100%;padding:14px 16px;border-radius:13px;border:1px solid var(--line);background:var(--card);
+  color:var(--txt);font-family:"Segoe UI",Inter,system-ui,sans-serif;font-size:1.05rem;direction:ltr;text-align:left}
+.answer-in:focus{outline:none;border-color:var(--accent)}
+
+.tokens{display:flex;flex-wrap:wrap;gap:8px;direction:ltr;justify-content:flex-start}
+.token{border:1px solid var(--line);background:var(--card);color:var(--txt);border-radius:10px;padding:9px 13px;
+  cursor:pointer;font-family:"Segoe UI",Inter,system-ui,sans-serif;font-size:1rem;transition:.15s}
+.token:hover:not(:disabled){border-color:var(--accent);background:var(--card-hi)}
+.token:disabled{opacity:.35;cursor:default}
+.slot{min-height:56px;border:1px dashed var(--line);border-radius:13px;padding:9px;margin-bottom:12px;
+  background:var(--bg-soft);display:flex;flex-wrap:wrap;gap:8px;direction:ltr;align-content:flex-start}
+.slot:empty::before{content:"اضغط الكلمات بالترتيب";color:var(--faint);font-size:.88rem;direction:rtl;padding:6px}
+
+.feedback{border-radius:13px;padding:14px 16px;margin-top:14px;border:1px solid var(--line)}
+.feedback.ok{border-color:var(--green);background:rgba(34,197,94,.10)}
+.feedback.no{border-color:var(--red);background:rgba(239,68,68,.10)}
+.feedback .head{font-weight:700;margin-bottom:4px}
+.feedback .sol{margin:4px 0}
+.feedback .note{color:var(--dim);font-size:.92rem;border-top:1px dashed var(--line);margin-top:8px;padding-top:8px}
+
+.row{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);
+  border-radius:13px;background:var(--card);margin-bottom:8px}
+.row .main{flex:1;min-width:0}
+.boxdot{width:24px;height:24px;border-radius:8px;display:grid;place-items:center;font-size:.72rem;
+  font-weight:700;flex:none;background:var(--card-hi);color:var(--dim)}
+.boxdot.b1{background:rgba(239,68,68,.18);color:var(--red)}
+.boxdot.b2{background:rgba(245,158,11,.18);color:var(--amber)}
+.boxdot.b3{background:rgba(79,156,249,.18);color:var(--accent)}
+.boxdot.b4{background:rgba(167,139,250,.18);color:var(--violet)}
+.boxdot.b5{background:rgba(34,197,94,.18);color:var(--green)}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--dim);padding:6px 13px;border-radius:999px;
+  font-size:.84rem;cursor:pointer;font-family:inherit;transition:.15s}
+.chip.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:600}
+.empty{text-align:center;padding:44px 20px;color:var(--dim)}
+.empty .big{font-size:3rem;margin-bottom:10px}
+bdi{unicode-bidi:isolate;font-family:"Segoe UI",Inter,system-ui,sans-serif}
+.hidden{display:none!important}
+.kbd{border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:1px 6px;
+  font-size:.75rem;color:var(--dim);background:var(--card-hi)}
+.toast{position:fixed;bottom:110px;inset-inline-start:50%;transform:translateX(50%);background:var(--card-hi);
+  border:1px solid var(--line);padding:10px 18px;border-radius:999px;z-index:60;box-shadow:var(--shadow);
+  font-size:.9rem;opacity:0;transition:.2s;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(50%) translateY(-6px)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <div class="brand"><span class="logo">🗣️</span>
+      <span>مدرّب الإنجليزية<small>للتحدث الفعلي — معارض · تفاوض · سفر</small></span></div>
+    <span class="spacer"></span>
+    <button class="icon-btn" id="themeBtn" title="المظهر">🌙</button>
+  </div>
+</header>
+
+<main class="wrap" id="view"></main>
+
+<nav class="tabs"><div class="tabs-in">
+  <button class="tab" data-r="home"><i>🏠</i>الرئيسية</button>
+  <button class="tab" data-r="session"><i>🎯</i>تدريب<span class="badge hidden" id="dueBadge">0</span></button>
+  <button class="tab" data-r="words"><i>📖</i>الكلمات</button>
+  <button class="tab" data-r="progress"><i>📈</i>تقدّمي</button>
+</div></nav>
+
+<div class="toast" id="toast"></div>
+
+<!-- ===================================================================
+     SEED-BANK-START — نسخة احتياطية من data/questions.json تُستعمل فقط
+     عند فتح الملف مباشرة من القرص (file://). حدّثها مع كل تعديل للبنك.
+     =================================================================== -->
+<script type="application/json" id="seed-bank">
+{
+  "version": 1,
+  "updated": "2026-09-07",
+  "questions": [
+    { "id": "w001", "type": "word", "topic": "exhibition", "skill": "vocab",
+      "word": "booth", "ipa": "/buːθ/", "answer": "جناح العرض",
+      "options": ["جناح العرض", "قاعة المؤتمرات", "بطاقة الدخول", "قائمة الأسعار"],
+      "example": "Our booth is near the main entrance.",
+      "exampleAr": "جناحنا قريب من المدخل الرئيسي.",
+      "note": "booth = المساحة التي تعرض فيها شركتك داخل المعرض.", "src": "seed" },
+
+    { "id": "w002", "type": "word", "topic": "supplier", "skill": "vocab",
+      "word": "supplier", "ipa": "/səˈplaɪ.ər/", "answer": "مورّد",
+      "options": ["مورّد", "عميل", "مدير مبيعات", "شركة شحن"],
+      "example": "We are looking for a reliable supplier in Turkey.",
+      "exampleAr": "نبحث عن مورّد موثوق في تركيا.",
+      "note": "supplier يزوّدك بالبضاعة، وclient/customer يشتري منك.", "src": "seed" },
+
+    { "id": "w003", "type": "word", "topic": "supplier", "skill": "vocab",
+      "word": "quote", "ipa": "/kwəʊt/", "answer": "عرض سعر",
+      "options": ["عرض سعر", "فاتورة", "إيصال", "عقد موقّع"],
+      "example": "Could you send me a quote by Thursday?",
+      "exampleAr": "هل يمكنك إرسال عرض سعر قبل الخميس؟",
+      "note": "quote = السعر المقترح قبل الاتفاق؛ invoice = الفاتورة بعده.", "src": "seed" },
+
+    { "id": "w004", "type": "word", "topic": "exhibition", "skill": "vocab",
+      "word": "lead", "ipa": "/liːd/", "answer": "عميل محتمل",
+      "options": ["عميل محتمل", "منتج جديد", "زميل عمل", "مندوب شحن"],
+      "example": "We collected forty leads at the fair.",
+      "exampleAr": "جمعنا أربعين عميلاً محتملاً في المعرض.",
+      "note": "lead = شخص أبدى اهتماماً وقد يصبح عميلاً — كلمة أساسية بعد أي معرض.", "src": "seed" },
+
+    { "id": "w005", "type": "word", "topic": "hotel", "skill": "vocab",
+      "word": "deposit", "ipa": "/dɪˈpɒz.ɪt/", "answer": "عربون / دفعة مقدمة",
+      "options": ["عربون / دفعة مقدمة", "الحساب النهائي", "رسوم إضافية", "خصم"],
+      "example": "The hotel asked for a deposit at check-in.",
+      "exampleAr": "طلب الفندق عربوناً عند تسجيل الدخول.",
+      "note": "deposit مبلغ مقدَّم يُخصم من الإجمالي أو يُعاد لك.", "src": "seed" },
+
+    { "id": "w006", "type": "word", "topic": "supplier", "skill": "vocab",
+      "word": "discount", "ipa": "/ˈdɪs.kaʊnt/", "answer": "خصم",
+      "options": ["خصم", "زيادة في السعر", "ضريبة", "عمولة"],
+      "example": "Can you offer a discount on bulk orders?",
+      "exampleAr": "هل يمكنكم تقديم خصم على الطلبات الكبيرة؟",
+      "note": "الفعل الأشيع: offer/give a discount — لا make a discount.", "src": "seed" },
+
+    { "id": "w007", "type": "word", "topic": "supplier", "skill": "vocab",
+      "word": "sample", "ipa": "/ˈsɑːm.pəl/", "answer": "عيّنة",
+      "options": ["عيّنة", "دفعة كاملة", "كتالوج", "ضمان"],
+      "example": "Could you send us a sample before we order?",
+      "exampleAr": "هل يمكنكم إرسال عيّنة قبل أن نطلب؟",
+      "note": "sample = قطعة تجريبية تفحصها قبل الطلب الكبير.", "src": "seed" },
+
+    { "id": "f001", "type": "fill", "topic": "exhibition", "skill": "grammar:present-perfect",
+      "situation": "في جناح المعرض، تعرّف زائر على شركتك ويسألك منذ متى تعملون في السوق الأوروبي.",
+      "text": "We ___ in this market since 2019.",
+      "options": ["have been", "are", "were", "have was"], "answer": "have been",
+      "note": "have been = بدأ في الماضي ومستمر حتى الآن — تلازم since/for.", "src": "seed" },
+
+    { "id": "f002", "type": "fill", "topic": "hotel", "skill": "grammar:polite-request",
+      "situation": "عند مكتب استقبال الفندق، حقائبك ثقيلة وتحتاج مساعدة.",
+      "text": "___ you send someone to help me with my luggage?",
+      "options": ["Could", "Do", "Are", "Must"], "answer": "Could",
+      "note": "Could + فعل = طلب مهذب، وهو الأنسب مع الغرباء والمواقف الرسمية.", "src": "seed" },
+
+    { "id": "f003", "type": "fill", "topic": "exhibition", "skill": "grammar:prepositions",
+      "situation": "زائر يسأل عن موعد فتح أبواب المعرض.",
+      "text": "The fair opens ___ 9 a.m.",
+      "options": ["at", "in", "on", "for"], "answer": "at",
+      "note": "at مع الساعة، on مع اليوم، in مع الشهر والسنة.", "src": "seed" },
+
+    { "id": "f004", "type": "fill", "topic": "supplier", "skill": "grammar:negation",
+      "situation": "في اجتماع مع مورّد، تشرح سياسة الدفع في شركتك.",
+      "text": "We ___ accept payment after delivery.",
+      "options": ["don't", "doesn't", "not", "aren't"], "answer": "don't",
+      "note": "نفي المضارع البسيط: don't/doesn't + الفعل الأساسي بلا تغيير.", "src": "seed" },
+
+    { "id": "f005", "type": "fill", "topic": "supplier", "skill": "grammar:questions",
+      "situation": "تسأل شركة في المعرض عن نطاق الشحن لديها.",
+      "text": "___ your company ship to Saudi Arabia?",
+      "options": ["Does", "Do", "Is", "Are"], "answer": "Does",
+      "note": "Does مع he/she/it والشركة (مفرد)، وDo مع I/you/we/they.", "src": "seed" },
+
+    { "id": "f006", "type": "fill", "topic": "supplier", "skill": "grammar:past-simple",
+      "situation": "تخبر زميلك بما أُنجز في اجتماع الأمس.",
+      "text": "We ___ the contract yesterday.",
+      "options": ["signed", "sign", "have signed", "signing"], "answer": "signed",
+      "note": "yesterday = وقت ماضٍ منتهٍ ⇒ الماضي البسيط، لا المضارع التام.", "src": "seed" },
+
+    { "id": "f007", "type": "fill", "topic": "supplier", "skill": "grammar:first-conditional",
+      "situation": "تتفاوض على السعر وتعرض شرطاً مقابل كمية أكبر.",
+      "text": "If you order 500 units, we ___ you a better price.",
+      "options": ["will give", "give", "would give", "gave"], "answer": "will give",
+      "note": "الشرط الأول: If + مضارع بسيط، والجواب will + فعل — لشرط ممكن الحدوث.", "src": "seed" },
+
+    { "id": "f008", "type": "fill", "topic": "exhibition", "skill": "grammar:comparative",
+      "situation": "تعرض الموديل الجديد على زائر رآه العام الماضي.",
+      "text": "This model is ___ than the one we showed last year.",
+      "options": ["cheaper", "cheap", "cheapest", "more cheap"], "answer": "cheaper",
+      "note": "المقارنة بصفة قصيرة: صفة + er + than — ولا نقول more cheap.", "src": "seed" },
+
+    { "id": "f009", "type": "fill", "topic": "networking", "skill": "error:continuous",
+      "situation": "يقترب منك أحدهم في المعرض وأنت مشغول مع عميل.",
+      "text": "Sorry, I ___ with a client right now.",
+      "options": ["am speaking", "speak", "spoke", "have spoken"], "answer": "am speaking",
+      "note": "right now ⇒ المضارع المستمر am/is/are + ing، لا المضارع البسيط.", "src": "seed" },
+
+    { "id": "f010", "type": "fill", "topic": "supplier", "skill": "error:articles",
+      "situation": "تصل إلى مقر شركة وتخبر موظف الاستقبال بسبب زيارتك.",
+      "text": "I'm here for ___ appointment with your sales manager.",
+      "options": ["an", "a", "the", "—"], "answer": "an",
+      "note": "an قبل الصوت المتحرك: an appointment، an offer، an order.", "src": "seed" },
+
+    { "id": "f011", "type": "fill", "topic": "supplier", "skill": "error:between-among",
+      "situation": "تشرح نطاق السعر لعميل في المعرض.",
+      "text": "The price is ___ 20 and 25 dollars.",
+      "options": ["between", "among", "in", "from"], "answer": "between",
+      "note": "between بين شيئين محددين، among وسط مجموعة غير محددة.", "src": "seed" },
+
+    { "id": "f012", "type": "fill", "topic": "supplier", "skill": "error:make-do",
+      "situation": "قرب نهاية التفاوض، تحاول إغلاق الاتفاق اليوم.",
+      "text": "Can we ___ a deal today?",
+      "options": ["make", "do", "take", "have"], "answer": "make",
+      "note": "make a deal / make an offer، لكن do business / do a job.", "src": "seed" },
+
+    { "id": "t001", "type": "translate", "topic": "supplier", "skill": "grammar:polite-request",
+      "prompt": "هل يمكنك إرسال عرض سعر غداً؟",
+      "answer": "Could you send a quote tomorrow?",
+      "accept": ["could you send a quote tomorrow", "can you send a quote tomorrow",
+                 "could you send me a quote tomorrow", "can you send me a quote tomorrow",
+                 "could you send us a quote tomorrow"],
+      "note": "Could you + فعل = الصيغة المهذبة المعتادة في المراسلات التجارية.", "src": "seed" },
+
+    { "id": "t002", "type": "translate", "topic": "supplier", "skill": "error:continuous",
+      "prompt": "نحن نبحث عن مورّد جديد.",
+      "answer": "We are looking for a new supplier.",
+      "accept": ["we are looking for a new supplier", "we're looking for a new supplier"],
+      "note": "بحث جارٍ الآن ⇒ are looking (مستمر)، وlook for = يبحث عن.", "src": "seed" },
+
+    { "id": "t003", "type": "translate", "topic": "exhibition", "skill": "grammar:prepositions",
+      "prompt": "جناحنا بجانب المدخل الرئيسي.",
+      "answer": "Our booth is next to the main entrance.",
+      "accept": ["our booth is next to the main entrance", "our stand is next to the main entrance",
+                 "our booth is beside the main entrance"],
+      "note": "next to = بجانب، وهي أشيع من beside في الكلام اليومي.", "src": "seed" },
+
+    { "id": "t004", "type": "translate", "topic": "restaurant", "skill": "vocab",
+      "prompt": "لدي حجز باسم عبد المنعم.",
+      "answer": "I have a reservation under the name Abdulmunem.",
+      "accept": ["i have a reservation under the name abdulmunem",
+                 "i have a booking under the name abdulmunem",
+                 "i have a reservation in the name of abdulmunem"],
+      "note": "under the name = باسم — الصيغة المستعملة في المطاعم والفنادق.", "src": "seed" },
+
+    { "id": "t005", "type": "translate", "topic": "supplier", "skill": "grammar:questions",
+      "prompt": "كم سعر الشحن إلى دبي؟",
+      "answer": "How much is the shipping to Dubai?",
+      "accept": ["how much is the shipping to dubai", "how much is shipping to dubai",
+                 "how much does the shipping to dubai cost", "how much does shipping to dubai cost"],
+      "note": "How much is + اسم = سؤال عن السعر بلا فعل مساعد إضافي.", "src": "seed" },
+
+    { "id": "t006", "type": "translate", "topic": "networking", "skill": "vocab",
+      "prompt": "سعدت بلقائك. هذه بطاقتي.",
+      "answer": "Nice to meet you. Here is my business card.",
+      "accept": ["nice to meet you here is my business card",
+                 "nice to meet you this is my business card",
+                 "it was nice to meet you here is my business card",
+                 "pleased to meet you here is my business card"],
+      "note": "Here is my business card = الجملة الجاهزة عند تبادل البطاقات.", "src": "seed" },
+
+    { "id": "o001", "type": "order", "topic": "supplier", "skill": "grammar:polite-request",
+      "prompt": "اطلب عيّنة بأدب من المورّد.",
+      "answer": "Could you send us a sample?",
+      "tokens": ["Could", "you", "send", "us", "a", "sample?"],
+      "note": "ترتيب الطلب المهذب: Could + فاعل + فعل + مفعول.", "src": "seed" },
+
+    { "id": "o002", "type": "order", "topic": "exhibition", "skill": "grammar:present-perfect",
+      "prompt": "أخبر الزائر بخبرة شركتك في السوق.",
+      "answer": "We have been in this market for ten years.",
+      "tokens": ["We", "have", "been", "in", "this", "market", "for", "ten", "years."],
+      "note": "for + مدة زمنية (ten years)، وsince + نقطة بداية (2019).", "src": "seed" },
+
+    { "id": "o003", "type": "order", "topic": "hotel", "skill": "grammar:questions",
+      "prompt": "اسأل في الفندق عمّا إذا كان الفطور ضمن السعر.",
+      "answer": "Is breakfast included in the price?",
+      "tokens": ["Is", "breakfast", "included", "in", "the", "price?"],
+      "note": "السؤال بـ be: الفعل المساعد Is يتقدم على الاسم.", "src": "seed" },
+
+    { "id": "o004", "type": "order", "topic": "supplier", "skill": "grammar:polite-request",
+      "prompt": "اعرض زيارة مصنع المورّد الشهر القادم.",
+      "answer": "I would like to visit your factory next month.",
+      "tokens": ["I", "would", "like", "to", "visit", "your", "factory", "next", "month."],
+      "note": "I would like to + فعل = أرغب في — أرقى من I want.", "src": "seed" },
+
+    { "id": "o005", "type": "order", "topic": "exhibition", "skill": "grammar:questions",
+      "prompt": "اسأل عن موعد إغلاق المعرض.",
+      "answer": "What time does the exhibition close?",
+      "tokens": ["What", "time", "does", "the", "exhibition", "close?"],
+      "note": "مع does يبقى الفعل مجرداً: does ... close، لا closes.", "src": "seed" }
+  ]
+}
+</script>
+<!-- SEED-BANK-END -->
+
+<script>
+(function(){
+'use strict';
+
+/* ============================== أدوات ============================== */
+const $ = (s,r)=> (r||document).querySelector(s);
+const view = $('#view'), toastEl = $('#toast'), dueBadge = $('#dueBadge');
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+/* نص عربي يخالطه إنجليزي: نعزل كل مقطع لاتيني حتى لا ينقلب ترتيبه بصرياً */
+const bidi = raw => String(raw==null?'':raw)
+  .split(/([A-Za-z][A-Za-z0-9 '’\/+\-.()]*)/g)
+  .map((p,i)=>{ if(i%2===0) return esc(p);
+    const tail = p.length - p.trimEnd().length;
+    return '<bdi>'+esc(p.trimEnd())+'</bdi>'+(tail? ' ':''); })
+  .join('');
+const DAY = 86400000;
+const dayKey = (d=new Date()) => new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);
+const shuffle = a => a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(p=>p[1]);
+let toastT=null;
+function toast(m){ toastEl.textContent=m; toastEl.classList.add('show');
+  clearTimeout(toastT); toastT=setTimeout(()=>toastEl.classList.remove('show'),1800); }
+
+/* تطبيع إجابة مكتوبة: حروف صغيرة، بلا ترقيم، مسافة واحدة */
+const norm = s => String(s).toLowerCase()
+  .replace(/[’']/g,"'").replace(/[.,!?;:"()]/g,' ')
+  .replace(/\s+/g,' ').trim();
+
+/* ============================ صناديق Leitner ============================ */
+const BOX_DAYS = {1:0, 2:1, 3:3, 4:7, 5:21};   // الفاصل بعد النجاح في كل صندوق
+const KEY = 'english-trainer.progress.v1';
+
+const DEFAULT = { cards:{}, skills:{}, history:{}, lastNewWord:null, sessions:0, created:Date.now() };
+let S = load();
+function load(){
+  try{ const r=localStorage.getItem(KEY); if(!r) return structuredClone(DEFAULT);
+       return Object.assign(structuredClone(DEFAULT), JSON.parse(r)); }
+  catch(e){ return structuredClone(DEFAULT); }
+}
+let saveT=null;
+function save(){ clearTimeout(saveT); saveT=setTimeout(()=>{
+  try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} },120); }
+
+function cardOf(id){ return S.cards[id]; }
+function boxOf(id){ const c=S.cards[id]; return c? c.box : 0; }   /* 0 = لم تبدأ */
+function isDue(id, now){ const c=S.cards[id]; return !!c && c.due<=now; }
+
+function record(q, ok){
+  const c = S.cards[q.id] || {box:1, due:0, seen:0, right:0, wrong:0};
+  c.seen++;
+  if(ok){ c.right++; c.box = Math.min(5, c.box+1); c.due = Date.now()+BOX_DAYS[c.box]*DAY; }
+  else  { c.wrong++; c.box = 1; c.due = Date.now(); }
+  c.last = Date.now();
+  S.cards[q.id] = c;
+
+  const sk = S.skills[q.skill] || {seen:0, wrong:0};
+  sk.seen++; if(!ok) sk.wrong++;
+  S.skills[q.skill] = sk;
+
+  const k = dayKey();
+  S.history[k] = (S.history[k]||0)+1;
+  if(q.type==='word' && !c.introduced){ c.introduced=true; S.lastNewWord = k; }
+  save();
+}
+
+function streak(){
+  let n=0; const d=new Date();
+  if(!S.history[dayKey(d)]) d.setDate(d.getDate()-1);
+  while(S.history[dayKey(d)]){ n++; d.setDate(d.getDate()-1); }
+  return n;
+}
+
+/* ============================== بنك الأسئلة ============================== */
+let BANK = [];
+let bankSource = 'seed';
+
+async function loadBank(){
+  try{
+    const r = await fetch('data/questions.json', {cache:'no-store'});
+    if(r.ok){
+      const j = await r.json();
+      if(j && Array.isArray(j.questions) && j.questions.length){
+        BANK = j.questions; bankSource = 'data/questions.json'; return;
+      }
+    }
+  }catch(e){ /* file:// أو الملف غير موجود — نستعمل النسخة المدمجة */ }
+  BANK = JSON.parse($('#seed-bank').textContent).questions;
+  bankSource = 'النسخة المدمجة';
+}
+
+const TYPE_AR = {word:'معنى كلمة', fill:'إكمال فراغ', translate:'ترجمة', order:'ترتيب كلمات'};
+const TOPIC_AR = {exhibition:'معرض تجاري', supplier:'مورّد وتفاوض', hotel:'فندق',
+                  restaurant:'مطعم', airport:'مطار', networking:'تعارف'};
+const SKILL_AR = {
+  'vocab':'مفردات', 'grammar:present-perfect':'المضارع التام', 'grammar:polite-request':'الطلب المهذب',
+  'grammar:prepositions':'حروف الجر', 'grammar:negation':'النفي', 'grammar:questions':'صياغة السؤال',
+  'grammar:past-simple':'الماضي البسيط', 'grammar:first-conditional':'الشرط الأول',
+  'grammar:comparative':'المقارنة', 'error:continuous':'المضارع المستمر',
+  'error:articles':'أداة النكرة a/an', 'error:between-among':'between / among', 'error:make-do':'make / do'
+};
+const skillName = s => SKILL_AR[s] || s;
+
+/* ====================== اختيار أسئلة الجلسة (١٠) ====================== */
+const SESSION_LEN = 10;
+
+function weakSkills(){
+  return Object.entries(S.skills)
+    .filter(([,v]) => v.seen>=2 && v.wrong/v.seen >= 0.34)
+    .sort((a,b)=> (b[1].wrong/b[1].seen)-(a[1].wrong/a[1].seen))
+    .map(([k])=>k);
+}
+
+function buildSession(){
+  const now = Date.now();
+  const due = BANK.filter(q=>isDue(q.id, now))
+                  .sort((a,b)=> S.cards[a.id].due - S.cards[b.id].due);
+  const fresh = BANK.filter(q=>!S.cards[q.id]);
+  const weak = weakSkills();
+
+  /* الجديدة: الأضعف مهارةً أولاً، ثم ترتيب عشوائي */
+  const freshSorted = shuffle(fresh).sort((a,b)=>{
+    const wa = weak.indexOf(a.skill), wb = weak.indexOf(b.skill);
+    return (wa<0?99:wa) - (wb<0?99:wb);
+  });
+
+  const out = due.slice(0, SESSION_LEN);
+  for(const q of freshSorted){ if(out.length>=SESSION_LEN) break; out.push(q); }
+
+  /* ضمان كلمة جديدة واحدة على الأقل كل يوم */
+  if(S.lastNewWord !== dayKey()){
+    const hasNewWord = out.some(q=>q.type==='word' && !S.cards[q.id]);
+    if(!hasNewWord){
+      const w = freshSorted.find(q=>q.type==='word');
+      if(w && !out.some(q=>q.id===w.id)){ out.length = Math.max(0,SESSION_LEN-1); out.unshift(w); }
+    }
+  }
+  return shuffle(out).slice(0, SESSION_LEN);
+}
+
+/* ================================ التنقل ================================ */
+let route='home';
+const R={};
+function go(n){ route=n; document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.r===n));
+  window.scrollTo(0,0); draw(); }
+function draw(){ (R[route]||R.home)(); badge(); }
+function badge(){ const now=Date.now();
+  const n = BANK.filter(q=>isDue(q.id,now)).length;
+  dueBadge.textContent = n>99?'99+':n; dueBadge.classList.toggle('hidden', n===0); }
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>go(t.dataset.r));
+
+/* =============================== الرئيسية =============================== */
+R.home = function(){
+  const now = Date.now();
+  const dueN = BANK.filter(q=>isDue(q.id,now)).length;
+  const freshN = BANK.filter(q=>!S.cards[q.id]).length;
+  const today = S.history[dayKey()]||0;
+  const boxes = [1,2,3,4,5].map(b=>BANK.filter(q=>boxOf(q.id)===b).length);
+  const started = BANK.length - freshN;
+  const newWordToday = S.lastNewWord === dayKey();
+
+  view.innerHTML = `
+    <section class="section">
+      <div class="card" style="background:linear-gradient(150deg,var(--card),var(--bg-soft))">
+        <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+          <div style="flex:1;min-width:190px">
+            <div class="muted small">اليوم</div>
+            <div style="font-size:1.7rem;font-weight:700">${today} <span class="muted" style="font-size:1rem">سؤالاً</span></div>
+          </div>
+          <div style="text-align:center"><div style="font-size:1.7rem;font-weight:700">🔥 ${streak()}</div>
+            <div class="muted small">يوم متتالٍ</div></div>
+        </div>
+        <button class="btn btn-primary btn-lg btn-block" style="margin-top:16px" id="startBtn">
+          ابدأ جلسة — ${SESSION_LEN} أسئلة${dueN?` (${dueN} مستحقة)`:''}
+        </button>
+        <div class="muted small" style="text-align:center;margin-top:10px">
+          ${newWordToday ? '✅ أخذتَ كلمة جديدة اليوم' : '📖 في جلسة اليوم كلمة جديدة على الأقل'}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>صناديق المراجعة</h2>
+      <div class="card">
+        <div class="bar" style="margin-bottom:14px">
+          <i style="width:${pc(boxes[4])}%;background:var(--green)"></i>
+          <i style="width:${pc(boxes[3])}%;background:var(--violet)"></i>
+          <i style="width:${pc(boxes[2])}%;background:var(--accent)"></i>
+          <i style="width:${pc(boxes[1])}%;background:var(--amber)"></i>
+          <i style="width:${pc(boxes[0])}%;background:var(--red)"></i>
+        </div>
+        <div class="grid grid-4" style="gap:8px">
+          ${boxes.map((n,i)=>`<div class="stat"><div class="num">${n}</div>
+            <div class="lbl">صندوق ${i+1}<br><span style="font-size:.72rem">${
+              i===0?'كل جلسة':'كل '+BOX_DAYS[i+1]+' يوم'}</span></div></div>`).join('')}
+          <div class="stat"><div class="num muted">${freshN}</div><div class="lbl">لم تبدأ</div></div>
+        </div>
+        <div class="muted small" style="text-align:center;margin-top:12px">
+          بدأتَ ${started} من ${BANK.length} سؤالاً · المصدر: ${esc(bankSource)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>المواقف المغطّاة</h2>
+      <div class="chips">
+        ${[...new Set(BANK.map(q=>q.topic))].map(t=>{
+          const n=BANK.filter(q=>q.topic===t).length;
+          return `<span class="chip">${esc(TOPIC_AR[t]||t)} · ${n}</span>`;}).join('')}
+      </div>
+    </section>`;
+
+  function pc(n){ return BANK.length? (n/BANK.length)*100 : 0; }
+  $('#startBtn').onclick = ()=>{ session=null; go('session'); };
+};
+
+/* ================================ الجلسة ================================ */
+let session = null;
+
+R.session = function(){
+  if(!session){
+    const qs = buildSession();
+    if(!qs.length){ return view.innerHTML =
+      `<div class="empty"><div class="big">🎉</div><h2>لا شيء مستحق الآن</h2>
+       <p class="muted">أحسنت — عُد لاحقاً حين تحين مواعيد المراجعة.</p></div>`; }
+    session = {qs, i:0, answered:false, right:0, done:0, picked:null, built:[]};
+    S.sessions++; save();
+  }
+  if(session.i >= session.qs.length) return sessionDone();
+  drawQuestion();
+};
+
+function sessionDone(){
+  const {done, right} = session;
+  const acc = done? Math.round(right/done*100) : 0;
+  session = null;
+  view.innerHTML = `
+    <div class="empty">
+      <div class="big">${acc>=80?'🏆':acc>=50?'👍':'📖'}</div>
+      <h2>${right} من ${done} صحيحة (${acc}%)</h2>
+      <p class="muted" style="margin-top:6px">الأسئلة التي أخطأتَ فيها عادت إلى الصندوق الأول.</p>
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap">
+        <button class="btn btn-primary" id="again">جلسة أخرى</button>
+        <button class="btn" id="home">الرئيسية</button>
+      </div>
+    </div>`;
+  $('#again').onclick = ()=>{ draw(); };
+  $('#home').onclick = ()=> go('home');
+}
+
+function drawQuestion(){
+  const q = session.qs[session.i];
+  const n = session.i+1, tot = session.qs.length;
+  const head = `
+    <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+      <span class="muted small">${n} من ${tot}</span>
+      <span class="muted small">${TYPE_AR[q.type]} · ${esc(TOPIC_AR[q.topic]||q.topic)}</span>
+    </div>
+    <div class="progress-bar" style="margin-bottom:16px"><i style="width:${(session.i/tot)*100}%"></i></div>`;
+
+  let body='';
+  if(q.type==='word'){
+    body = `
+      <div class="card">
+        <div class="q-ask">ما معنى هذه الكلمة؟</div>
+        <div class="q-text en">${esc(q.word)}</div>
+        <div class="q-ipa en">${esc(q.ipa||'')}</div>
+      </div>
+      <div style="margin-top:14px" id="opts">
+        ${shuffleStable(q).map((o,i)=>optHTML(o,i)).join('')}
+      </div>`;
+  } else if(q.type==='fill'){
+    body = `
+      ${q.situation? `<div class="situation">${bidi(q.situation)}</div>`:''}
+      <div class="card"><div class="q-text en">${esc(q.text).replace('___','<b style="color:var(--accent)">___</b>')}</div></div>
+      <div style="margin-top:14px" id="opts">
+        ${shuffleStable(q).map((o,i)=>optHTML(o,i)).join('')}
+      </div>`;
+  } else if(q.type==='translate'){
+    body = `
+      <div class="card">
+        <div class="q-ask">اكتبها بالإنجليزية</div>
+        <div class="q-text">${bidi(q.prompt)}</div>
+      </div>
+      <div style="margin-top:14px">
+        <input class="answer-in" id="typed" placeholder="Type your answer…" autocomplete="off"
+               autocapitalize="off" spellcheck="false">
+        <button class="btn btn-primary btn-block btn-lg" style="margin-top:10px" id="checkBtn">تحقّق</button>
+      </div>`;
+  } else if(q.type==='order'){
+    if(!session.built.length && !session.answered) session.pool = shuffle(q.tokens.slice());
+    body = `
+      <div class="card"><div class="q-ask">رتّب الكلمات لتكوين الجملة</div>
+        <div class="q-text">${bidi(q.prompt||'')}</div></div>
+      <div style="margin-top:14px">
+        <div class="slot" id="slot">${session.built.map((t,i)=>
+          `<button class="token" data-b="${i}">${esc(t)}</button>`).join('')}</div>
+        <div class="tokens" id="pool">${session.pool.map((t,i)=>
+          `<button class="token" data-p="${i}" ${session.built.includes(t)&&countIn(session.built,t)>=countIn(session.pool,t)?'disabled':''}>${esc(t)}</button>`
+          ).join('')}</div>
+        <button class="btn btn-primary btn-block btn-lg" style="margin-top:12px" id="checkBtn"
+          ${session.built.length? '':'disabled'}>تحقّق</button>
+      </div>`;
+  }
+
+  view.innerHTML = `<section class="section">${head}${body}<div id="fb"></div></section>`;
+
+  if(q.type==='word'||q.type==='fill'){
+    view.querySelectorAll('.opt').forEach(b=> b.onclick = ()=> answerChoice(q, b.dataset.v, b));
+  }
+  if(q.type==='translate'){
+    const inp = $('#typed'); inp.focus();
+    inp.onkeydown = e => { if(e.key==='Enter'){ e.preventDefault(); checkTyped(q); } };
+    $('#checkBtn').onclick = ()=> checkTyped(q);
+  }
+  if(q.type==='order'){
+    view.querySelectorAll('[data-p]').forEach(b=> b.onclick = ()=>{
+      session.built.push(session.pool[+b.dataset.p]); drawQuestion(); });
+    view.querySelectorAll('[data-b]').forEach(b=> b.onclick = ()=>{
+      session.built.splice(+b.dataset.b,1); drawQuestion(); });
+    $('#checkBtn').onclick = ()=> checkOrder(q);
+  }
+}
+
+function countIn(arr,v){ return arr.filter(x=>x===v).length; }
+function optHTML(o,i){ const k=['أ','ب','ج','د'][i]||(i+1);
+  return `<button class="opt" data-v="${esc(o)}"><span class="k">${k}</span><span class="${/[A-Za-z]/.test(o)?'en':''}">${esc(o)}</span></button>`; }
+
+/* ترتيب خيارات ثابت طوال عرض السؤال نفسه */
+function shuffleStable(q){
+  if(session.optOrder && session.optFor===q.id) return session.optOrder;
+  session.optOrder = shuffle(q.options.slice()); session.optFor = q.id;
+  return session.optOrder;
+}
+
+function answerChoice(q, val, btn){
+  if(session.answered) return;
+  const ok = val === q.answer;
+  view.querySelectorAll('.opt').forEach(b=>{
+    b.disabled = true;
+    if(b.dataset.v === q.answer) b.classList.add('correct');
+    else if(b===btn) b.classList.add('wrong');
+  });
+  finish(q, ok);
+}
+
+function checkTyped(q){
+  if(session.answered) return;
+  const val = norm($('#typed').value);
+  if(!val) return toast('اكتب إجابتك أولاً');
+  const accept = (q.accept||[]).map(norm).concat(norm(q.answer));
+  finish(q, accept.includes(val));
+  $('#typed').disabled = true; $('#checkBtn').disabled = true;
+}
+
+function checkOrder(q){
+  if(session.answered) return;
+  finish(q, session.built.join(' ') === q.answer);
+  view.querySelectorAll('.token').forEach(b=>b.disabled=true);
+  $('#checkBtn').disabled = true;
+}
+
+function finish(q, ok){
+  session.answered = true;
+  session.done++;
+  if(ok) session.right++;
+  else session.qs.push(q);              /* الخطأ يعاد في نفس الجلسة */
+  record(q, ok);
+
+  const solution = q.type==='fill'
+      ? q.text.replace('___', q.answer)
+      : q.answer;
+
+  $('#fb').innerHTML = `
+    <div class="feedback ${ok?'ok':'no'}">
+      <div class="head">${ok?'✅ صحيح':'❌ غير صحيح'}</div>
+      <div class="sol en">${esc(solution)}</div>
+      ${q.type==='word' && q.example ? `<div class="sol en small">${esc(q.example)}</div>
+        <div class="small muted">${bidi(q.exampleAr||'')}</div>`:''}
+      ${q.type==='translate'||q.type==='order' ? `<div class="small muted">${bidi(q.prompt||'')}</div>`:''}
+      <div class="note">${bidi(q.note)}</div>
+    </div>
+    <button class="btn btn-primary btn-block btn-lg" style="margin-top:12px" id="nextBtn">
+      ${session.i+1 >= session.qs.length ? 'إنهاء الجلسة' : 'التالي'}
+    </button>
+    <p class="muted small" style="text-align:center;margin-top:10px"><span class="kbd">Enter</span> للمتابعة</p>`;
+
+  $('#nextBtn').onclick = next;
+  $('#nextBtn').focus();
+  badge();
+}
+
+function next(){
+  session.i++; session.answered=false; session.built=[]; session.pool=[];
+  session.optOrder=null; session.optFor=null;
+  draw();
+}
+
+document.addEventListener('keydown', e=>{
+  if(route!=='session' || !session) return;
+  if(e.key==='Enter' && session.answered){ e.preventDefault(); next(); }
+});
+
+/* =============================== الكلمات =============================== */
+R.words = function(){
+  const words = BANK.filter(q=>q.type==='word');
+  view.innerHTML = `
+    <section class="section">
+      <h2>الكلمات (${words.length})</h2>
+      <p class="muted small" style="margin-bottom:12px">الرقم يدل على صندوق المراجعة — كلما ارتفع، طال الفاصل قبل عودتها.</p>
+      ${words.length? words.map(q=>{
+        const b = boxOf(q.id);
+        return `<div class="row" style="align-items:flex-start">
+          <span class="boxdot b${b}">${b||'—'}</span>
+          <div class="main">
+            <div><b class="en">${esc(q.word)}</b> <span class="muted en small">${esc(q.ipa||'')}</span></div>
+            <div>${esc(q.answer)}</div>
+            <div class="small en" style="color:var(--dim);margin-top:4px">${esc(q.example||'')}</div>
+            <div class="small muted">${bidi(q.exampleAr||'')}</div>
+          </div></div>`; }).join('')
+        : '<div class="empty"><div class="big">📖</div><p>لا كلمات في البنك بعد</p></div>'}
+    </section>`;
+};
+
+/* =============================== تقدّمي =============================== */
+R.progress = function(){
+  const now = Date.now();
+  const totalAns = Object.values(S.history).reduce((a,b)=>a+b,0);
+  const seen = Object.values(S.cards);
+  const right = seen.reduce((a,c)=>a+c.right,0);
+  const wrong = seen.reduce((a,c)=>a+c.wrong,0);
+  const acc = (right+wrong)? Math.round(right/(right+wrong)*100) : 0;
+
+  const skills = Object.entries(S.skills)
+    .map(([k,v])=>({k, ...v, rate: v.seen? v.wrong/v.seen : 0}))
+    .sort((a,b)=> b.rate-a.rate || b.seen-a.seen);
+  const weak = skills.filter(s=>s.seen>=2 && s.rate>=0.34);
+
+  const days = [];
+  for(let i=13;i>=0;i--){ const d=new Date(); d.setDate(d.getDate()-i);
+    days.push({k:dayKey(d), n:S.history[dayKey(d)]||0}); }
+  const mx = Math.max(1,...days.map(d=>d.n));
+
+  view.innerHTML = `
+    <section class="section">
+      <h2>📈 تقدّمي</h2>
+      <div class="grid grid-4">
+        <div class="stat"><div class="num">${totalAns}</div><div class="lbl">إجابة إجمالاً</div></div>
+        <div class="stat"><div class="num">${acc}%</div><div class="lbl">الدقة</div></div>
+        <div class="stat"><div class="num">🔥 ${streak()}</div><div class="lbl">أيام متتالية</div></div>
+        <div class="stat"><div class="num">${BANK.filter(q=>isDue(q.id,now)).length}</div><div class="lbl">مستحق الآن</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>آخر ١٤ يوماً</h2>
+      <div class="card">
+        <div style="display:flex;gap:4px;align-items:flex-end;height:80px">
+          ${days.map(d=>`<div title="${d.k}: ${d.n}" style="flex:1;border-radius:4px;min-height:4px;
+            height:${Math.max(6,(d.n/mx)*100)}%;background:${d.n?'linear-gradient(180deg,var(--accent),var(--violet))':'var(--card-hi)'}"></div>`).join('')}
+        </div>
+        <div class="muted small" style="display:flex;justify-content:space-between;margin-top:8px">
+          <span>قبل ١٤ يوماً</span><span>اليوم</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>نقاط الضعف</h2>
+      <div class="card">
+        ${weak.length ? weak.map(s=>`
+          <div style="margin-bottom:13px">
+            <div style="display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:5px">
+              <span>${esc(skillName(s.k))}</span>
+              <span class="muted">${s.wrong} خطأ من ${s.seen}</span></div>
+            <div class="bar"><i style="width:${s.rate*100}%;background:var(--red)"></i></div>
+          </div>`).join('')
+        : '<p class="muted small">لا توجد نقاط ضعف واضحة بعد — أكمل بضع جلسات وستظهر هنا المهارات التي تتكرر فيها أخطاؤك.</p>'}
+        ${weak.length? '<p class="muted small" style="margin-top:6px">الجلسات القادمة ستقدّم أسئلة هذه المهارات أولاً.</p>':''}
+      </div>
+    </section>
+
+    ${skills.length? `<section class="section">
+      <h2>كل المهارات</h2>
+      <div class="card">
+        ${skills.map(s=>`<div class="row" style="margin-bottom:6px;padding:9px 12px">
+          <div class="main small">${esc(skillName(s.k))}</div>
+          <span class="muted small">${Math.round((1-s.rate)*100)}% صحيح · ${s.seen}</span></div>`).join('')}
+      </div></section>`:''}
+
+    <section class="section">
+      <div class="grid grid-2">
+        <button class="btn" id="exportBtn">⬇️ تصدير التقدّم</button>
+        <button class="btn" id="resetBtn" style="border-color:var(--red);color:var(--red)">🗑️ مسح التقدّم</button>
+      </div>
+      <p class="muted small" style="margin-top:10px">
+        يُحفظ تقدّمك في متصفحك فقط (localStorage). عدد الجلسات: ${S.sessions}.
+      </p>
+    </section>`;
+
+  $('#exportBtn').onclick = ()=>{
+    const blob = new Blob([JSON.stringify(S,null,2)],{type:'application/json'});
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+    a.download='english-trainer-progress-'+dayKey()+'.json'; a.click(); URL.revokeObjectURL(a.href);
+    toast('تم تصدير ملف التقدّم');
+  };
+  $('#resetBtn').onclick = ()=>{
+    if(confirm('سيتم مسح كل تقدّمك ولا يمكن التراجع. متأكد؟')){
+      S = structuredClone(DEFAULT); save(); session=null; toast('تم المسح'); draw(); }
+  };
+};
+
+/* ================================ المظهر ================================ */
+const themeBtn = $('#themeBtn');
+function theme(t){ document.documentElement.dataset.theme=t; themeBtn.textContent = t==='dark'?'🌙':'☀️';
+  try{ localStorage.setItem('english-trainer.theme',t); }catch(e){} }
+let t0='dark'; try{ t0 = localStorage.getItem('english-trainer.theme')||'dark'; }catch(e){}
+theme(t0);
+themeBtn.onclick = ()=> theme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+
+/* ================================ الإقلاع ================================ */
+loadBank().then(()=>{ go('home'); });
+
+})();
+</script>
+</body>
+</html>
